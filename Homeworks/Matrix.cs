@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks
 {
@@ -51,19 +47,12 @@ namespace Homeworks
         {
             double[,] tempMatrix = values;
             row -= 1; //уменьшение значения, чтобы отчет был не от нуля
-            
-            for (int i = 0; i < values.GetLength(0); i++)
+
+            for (int i = 0; i < values.GetLength(0) - 1; i++)
             {
-                for (int j = 0;j < values.GetLength(1); j++)
+                for (int j = 0; j < values.GetLength(1) - 1; j++)
                 {
-                    if (values[i, j] == values[row, j])
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        values[i, j] = values[i, j] - values[row, j];
-                    }
+                    values[i, j] = values[i, j] - values[row, j];
                 }
             }
 

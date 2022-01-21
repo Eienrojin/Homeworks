@@ -22,11 +22,11 @@ namespace Homeworks
         public int Rows { get; set; }
         public double[,] Values { get => values; set => values = value; }
 
-        public void PrintMatrix(double[,] values)
+        public void PrintMatrix()
         {
-            for (int i = 0; i < Columns; i++)
+            for (int i = 0; i < values.GetLength(0); i++)
             {
-                for (int j = 0; j < Rows; j++)
+                for (int j = 0; j < values.GetLength(1); j++)
                 {
                     Console.Write($"{values[i, j]}\t");
                 }
@@ -44,6 +44,30 @@ namespace Homeworks
                     Values[i, j] = random.Next(1, 10);
                 }
             }
+        }
+
+        //Вычитание как написано в задании
+        public double[,] subtrMatrix(int row)
+        {
+            double[,] tempMatrix = values;
+            row -= 1; //уменьшение значения, чтобы отчет был не от нуля
+            
+            for (int i = 0; i < values.GetLength(0); i++)
+            {
+                for (int j = 0;j < values.GetLength(1); j++)
+                {
+                    if (values[i, j] == values[row, j])
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        values[i, j] = values[i, j] - values[row, j];
+                    }
+                }
+            }
+
+            return tempMatrix;
         }
     }
 }

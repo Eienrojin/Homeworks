@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace Homeworks
 {
     internal class Matrix
     {
-        public double[,] values { get; set; }
+        public double[,] Values { get; set; }
 
         public Matrix(int columns, int rows)
         {
@@ -31,6 +31,18 @@ namespace Homeworks
                     Console.Write($"{values[i, j]}\t");
                 }
                 Console.WriteLine();
+            }
+        }
+        public void InitRandomValues()
+        {
+            Random random = new Random();
+
+            for (int i = 0; i < Columns - 1; i++)
+            {
+                for (int j = 0; j < Rows - 1; j++)
+                {
+                    MatrixValues[i, j] = random.Next(1, 10);
+                }
             }
         }
     }

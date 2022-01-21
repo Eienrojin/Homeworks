@@ -45,18 +45,28 @@ namespace Homeworks
         //Вычитание как написано в задании
         public double[,] subtrMatrix(int row)
         {
-            double[,] tempMatrix = values;
+            /// <summary>
+            /// Принимает значение от единицы до последней колонки матрицы
+            /// </summary>
+
             row -= 1; //уменьшение значения, чтобы отчет был не от нуля
 
-            for (int i = 0; i < values.GetLength(0) - 1; i++)
+            for (int i = 0; i < values.GetLength(0); i++)
             {
-                for (int j = 0; j < values.GetLength(1) - 1; j++)
+                for (int j = 0; j < values.GetLength(1); j++)
                 {
-                    values[i, j] = values[i, j] - values[row, j];
+                    if (i == row)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Values[i, j] = Values[i, j] - Values[row, j];
+                    }
                 }
             }
 
-            return tempMatrix;
+            return Values;
         }
     }
 }

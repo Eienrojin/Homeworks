@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ВАРИАНТ 4 (16 по списку)
+Описать класс, реализующий тип данных «вещественная матрица». 
+Реализовать вычитание строки заданного номера из всех остальных строк, кроме данной строки. 
+*/
+
 namespace Homeworks
 {
     internal class Program

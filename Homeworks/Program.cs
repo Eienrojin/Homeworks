@@ -28,8 +28,8 @@ namespace Homeworks
             Console.WriteLine("Исходная матрица 2");
             matrix1.PrintMatrix();
 
-            matrix.Values = matrix.subtrMatrix(3); //третья колонка, а не вторая
-            matrix1.Values = matrix1.subtrMatrix(1);
+            matrix.subtrMatrix(3); //третья колонка, а не вторая
+            matrix1.subtrMatrix(1);
 
             Console.WriteLine("Измененная матрица 1");
             matrix.PrintMatrix();

@@ -43,7 +43,7 @@ namespace Homeworks
         }
 
         //Вычитание как написано в задании
-        public double[,] subtrMatrix(int row)
+        public void subtrMatrix(int row)
         {
             /// <summary>
             /// Принимает значение от единицы до последней колонки матрицы
@@ -65,8 +65,6 @@ namespace Homeworks
                     }
                 }
             }
-
-            return Values;
         }
     }
 }

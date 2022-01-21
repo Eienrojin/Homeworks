@@ -8,19 +8,19 @@ namespace Homeworks
 {
     internal class Matrix
     {
-        public double[,] Values { get; set; }
+        private double[,] values;
 
         public Matrix(int columns, int rows)
         {
             Columns = columns;
             Rows = rows;
 
-            double[,] values = new double[Rows, Columns];
+            values = new double[Rows, Columns];
         }
 
         public int Columns { get; set; }
         public int Rows { get; set; }
-        public double[,] MatrixValues { get; set; }
+        public double[,] Values { get => values; set => values = value; }
 
         public void PrintMatrix(double[,] values)
         {
@@ -37,11 +37,11 @@ namespace Homeworks
         {
             Random random = new Random();
 
-            for (int i = 0; i < Columns - 1; i++)
+            for (int i = 0; i < values.GetLength(0); i++)
             {
-                for (int j = 0; j < Rows - 1; j++)
+                for (int j = 0; j < values.GetLength(1); j++)
                 {
-                    MatrixValues[i, j] = random.Next(1, 10);
+                    Values[i, j] = random.Next(1, 10);
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,26 +12,12 @@ namespace Homeworks
         {
             Matrix matrix = new Matrix(3, 3);
 
-            InitRandomValues(matrix.values);
+            matrix.InitRandomValues();
 
             Console.WriteLine("Исходная матрица");
-            matrix.PrintMatrix(matrix.values);
+            matrix.PrintMatrix(matrix.Values);
 
             Console.ReadKey();
-        }
-
-        static double InitRandomValues(double[,] array)
-        {
-            Random random = new Random();
-
-            for (int i = 0; i < array.GetLength(0); i++)
-            {
-                for (int j = 0; j < array.GetLength(1); j++)
-                {
-                    array[i,j] = random.Next(1, 10);
-                    return array[i, j];
-                }
-            }
         }
     }
 }
